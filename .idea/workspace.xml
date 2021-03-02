@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ab54db0e-56c7-48a1-b190-bf9370fb2622" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/subscription/adding/adding.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/subscription/adding/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/subscription/adding/subscription.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/subscription/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/subscription/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/http/rest/http.go" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://C:/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1nal5zKqXwQMj9eEoSwOoYR5Pwt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build url-shortener/cmd/url-shortener">
+    <configuration name="go build dmpss-subscription-v2/cmd/subscription (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="url-shortener" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/subscription/main.go" />
+      <package value="dmpss-subscription-v2/cmd/subscription" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build dmpss-subscription-v2/cmd/subscription" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="dmpss-truetv-v2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/subscription/main.go" />
+      <package value="dmpss-subscription-v2/cmd/subscription" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build url-shortener/cmd/subscription" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="url-shortener" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/subscription/main.go" />
+      <package value="url-shortener/cmd/subscription" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build url-shortener/cmd/url-shortener" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="url-shortener" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/cmd/url-shortener/main.go" />
+      <package value="url-shortener/cmd/url-shortener" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build url-shortener/cmd/url-shortener" />
+        <item itemvalue="Go Build.go build url-shortener/cmd/subscription" />
+        <item itemvalue="Go Build.go build dmpss-subscription-v2/cmd/subscription (1)" />
+        <item itemvalue="Go Build.go build dmpss-subscription-v2/cmd/subscription" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

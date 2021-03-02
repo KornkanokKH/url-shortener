@@ -1,0 +1,13 @@
+# default configuration to Alpha
+config: &default
+  server: &server
+    timeout: 15
+    shutdownTimeout: 15
+    port: 3000
+    name: url-shortener
+    env: local
+
+local:
+  <<: *default
+  server:
+    <<: *server

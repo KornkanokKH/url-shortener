@@ -6,8 +6,16 @@ config: &default
     port: 3000
     name: url-shortener
     env: local
+  redis: &redis
+    key: "KEY:"
+    expire: 30 #Days
+    redisServer:
+      address: 127.0.0.1
+      port: 6379
 
 local:
   <<: *default
   server:
     <<: *server
+  redis:
+    <<: *redis

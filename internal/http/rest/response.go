@@ -8,9 +8,20 @@ import (
 
 var (
 	ErrCodeBadRequest = map[string]interface{}{
-		"Code":     10004,
-		"Message":  "Invalid parameter %v",
-		"Message2": "The account id mismatch",
+		"Code":    1001,
+		"Message": "Invalid parameter %v",
+	}
+	ErrCodeURLInvalid = map[string]interface{}{
+		"Code":    1002,
+		"Message": "Invalid url %v",
+	}
+	ErrCodeDate = map[string]interface{}{
+		"Code":    1003,
+		"Message": "Invalid expire_date value. The expire_date must be greater than now",
+	}
+	ErrCodeRedis = map[string]interface{}{
+		"Code":    1004,
+		"Message": "Error redis",
 	}
 )
 
@@ -19,9 +30,9 @@ type ErrorResponse struct {
 }
 
 type Response struct {
-	Code            int         `json:"code"`
-	Message         string      `json:"message"`
-	Data            interface{} `json:"data,omitempty"`
+	Code    int         `json:"code"`
+	Message string      `json:"message"`
+	Data    interface{} `json:"data,omitempty"`
 }
 
 func WriteResponse(writer http.ResponseWriter, HTTPStatus int, data interface{}) string {

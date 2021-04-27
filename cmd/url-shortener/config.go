@@ -2,11 +2,13 @@ package main
 
 import (
 	"time"
+	"url-shortener/internal/repository/redis"
 )
 
 // Config data model
 type Config struct {
 	Server
+	Redis redis.Config
 }
 
 // Server data model

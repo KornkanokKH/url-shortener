@@ -13,6 +13,7 @@ import (
 	"time"
 	"url-shortener/cmd/url-shortener/generate"
 	"url-shortener/internal/config"
+	"url-shortener/internal/repository/redis"
 )
 
 func main() {
@@ -31,10 +32,15 @@ func run() error {
 		log.Fatal().Msgf("Unexpected error to init configuration: %v.", err)
 	}
 
-	generate := generate.NewService()
+	redisHandler := &redis.Handler{}
+	if err := redisHandler.Connect(conf.Redis); err != nil {
+		return err
+	}
+
+	service := generate.NewService(redisHandler, conf.Redis)
 
 	server := &http.Server{
-		Handler:      routes(generate),
+		Handler:      routes(service),
 		Addr:         fmt.Sprintf(":%v", conf.Port),
 		WriteTimeout: conf.Timeout * time.Second,
 		ReadTimeout:  conf.Timeout * time.Second,

@@ -64,7 +64,7 @@ func (s *StorageService) GetUrlShortener(w http.ResponseWriter, r *http.Request)
 		log.Error().Msgf(fmtError, msg)
 		respErr.Error.Code = rest.ErrCodeUrlExp["Code"].(int)
 		respErr.Error.Message = rest.ErrCodeUrlExp["Message"].(string)
-		rest.WriteResponse(w, http.StatusBadRequest, respErr)
+		rest.WriteResponse(w, http.StatusGone, respErr)
 		return
 	}
 

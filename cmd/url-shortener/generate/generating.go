@@ -11,7 +11,6 @@ import (
 	"io/ioutil"
 	"math/big"
 	"net/http"
-	"net/url"
 	"strings"
 	"time"
 	"url-shortener/internal/generate/encode"
@@ -83,17 +82,6 @@ func (s *StorageService) GenerateUrlShortener(w http.ResponseWriter, r *http.Req
 		respErr.Error.Message = fmt.Sprintf(rest.ErrCodeBadRequest["Message"].(string), strings.Join(errList, ","))
 		rest.WriteResponse(w, http.StatusBadRequest, respErr)
 		return
-	}
-
-	uri, err1 := url.ParseRequestURI(request.FullURL)
-	if err1 != nil && uri != nil && uri.Scheme != "http" && uri.Scheme != "https" {
-		msg := fmt.Sprintf("Invalid URL (%v)", err1)
-		log.Error().Msgf(fmtError, msg)
-		respErr.Error.Code = rest.ErrCodeURLInvalid["Code"].(int)
-		respErr.Error.Message = fmt.Sprintf(rest.ErrCodeBadRequest["Message"].(string), err1)
-		rest.WriteResponse(w, http.StatusBadRequest, respErr)
-		return
-
 	}
 
 	if request.ExpireDate <= time.Now().Unix() {

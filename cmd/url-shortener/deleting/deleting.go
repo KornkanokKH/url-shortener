@@ -49,14 +49,14 @@ func (s *StorageService) DeleteUrlShortener(w http.ResponseWriter, r *http.Reque
 	if err != nil {
 		msg := fmt.Sprintf("redis error (%v)", err)
 		log.Error().Msgf(fmtError, msg)
-		respErr.Error.Code = rest.ErrCodeBadRequest["Code"].(int)
+		respErr.Error.Code = rest.ErrCodeRedis["Code"].(int)
 		respErr.Error.Message = msg
 		rest.WriteResponse(w, http.StatusBadRequest, respErr)
 		return
 	}
 
 	fmt.Println("DeleteUrlShortener : Success")
-	_ = rest.WriteResponse(w, http.StatusCreated, &rest.Response{
+	_ = rest.WriteResponse(w, http.StatusGone, &rest.Response{
 		Code:    200,
 		Message: "Success",
 	})

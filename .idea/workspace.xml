@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46be0e2f-0b13-46bd-bfc5-2db7c9103423" name="Default Changelist" comment="modify delete api, update workflow process">
+    <list default="true" id="46be0e2f-0b13-46bd-bfc5-2db7c9103423" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/deleting/deleting.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/deleting/deleting.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/deleting/deleting_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/deleting/deleting_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/generating_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/generating_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/getting/geting.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/getting/geting.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/getting/geting_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/getting/geting_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,44 +65,14 @@
       <recent name="D:\ProjectKornkaOh\url-shortener\internal\generate\encode" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TSuite in url-shortener/cmd/url-shortener/getting">
-    <configuration name="go build url-shortener/cmd/subscription" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TSuite in url-shortener/cmd/url-shortener/deleting">
+    <configuration name="TSuite in url-shortener/cmd/url-shortener/deleting" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="url-shortener" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/cmd/subscription/main.go" />
-      <package value="url-shortener/cmd/subscription" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build url-shortener/cmd/url-shortener" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="url-shortener" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/cmd/url-shortener/main.go" />
-      <package value="url-shortener/cmd/url-shortener" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TSuite in url-shortener/cmd/url-shortener/generate (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="url-shortener" />
-      <working_directory value="$PROJECT_DIR$/cmd/url-shortener/generate" />
-      <parameters value=" -testify.m ^TestDeleteSubscription_GetValidError$" />
+      <working_directory value="$PROJECT_DIR$/cmd/url-shortener/deleting" />
+      <parameters value=" -testify.m ^TestDelete_ValidRedisError|TestDelete_Success$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="url-shortener/cmd/url-shortener/generate" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QTestSuite\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TSuite in url-shortener/cmd/url-shortener/generate" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="url-shortener" />
-      <working_directory value="$PROJECT_DIR$/cmd/url-shortener/generate" />
-      <parameters value=" -testify.m ^TestDeleteSubscription_GetValidJWTPayloadError$" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="url-shortener/cmd/url-shortener/generate" />
+      <package value="url-shortener/cmd/url-shortener/deleting" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QTestSuite\E$" />
@@ -105,6 +81,7 @@
     <configuration name="TSuite in url-shortener/cmd/url-shortener/getting" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="url-shortener" />
       <working_directory value="$PROJECT_DIR$/cmd/url-shortener/getting" />
+      <parameters value=" -testify.m ^TestGet_URLExpireRedisError|TestGet_URLExpireRedis|TestGet_URLGetFullErrorRedis|TestGet_URLGetFullNilRedis$" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
       <package value="url-shortener/cmd/url-shortener/getting" />
@@ -113,13 +90,49 @@
       <pattern value="^\QTestSuite\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestGet_URLExpireRedis in url-shortener/cmd/url-shortener/getting" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="url-shortener" />
+      <working_directory value="$PROJECT_DIR$/cmd/url-shortener/getting" />
+      <parameters value=" -testify.m ^TestGet_URLExpireRedis$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="url-shortener/cmd/url-shortener/getting" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestSuite\E$/^\QTestGet_URLExpireRedis\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGet_URLExpireRedisError in url-shortener/cmd/url-shortener/getting" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="url-shortener" />
+      <working_directory value="$PROJECT_DIR$/cmd/url-shortener/getting" />
+      <parameters value=" -testify.m ^TestGet_URLExpireRedisError$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="url-shortener/cmd/url-shortener/getting" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestSuite\E$/^\QTestGet_URLExpireRedisError\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGet_URLGetFullNilRedis in url-shortener/cmd/url-shortener/getting" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="url-shortener" />
+      <working_directory value="$PROJECT_DIR$/cmd/url-shortener/getting" />
+      <parameters value=" -testify.m ^TestGet_URLGetFullNilRedis$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="url-shortener/cmd/url-shortener/getting" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestSuite\E$/^\QTestGet_URLGetFullNilRedis\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TSuite in url-shortener/cmd/url-shortener/deleting" />
         <item itemvalue="Go Test.TSuite in url-shortener/cmd/url-shortener/getting" />
-        <item itemvalue="Go Build.go build url-shortener/cmd/url-shortener" />
-        <item itemvalue="Go Test.TSuite in url-shortener/cmd/url-shortener/generate (1)" />
-        <item itemvalue="Go Test.TSuite in url-shortener/cmd/url-shortener/generate" />
-        <item itemvalue="Go Build.go build url-shortener/cmd/subscription" />
+        <item itemvalue="Go Test.TestGet_URLGetFullNilRedis in url-shortener/cmd/url-shortener/getting" />
+        <item itemvalue="Go Test.TestGet_URLExpireRedis in url-shortener/cmd/url-shortener/getting" />
+        <item itemvalue="Go Test.TestGet_URLExpireRedisError in url-shortener/cmd/url-shortener/getting" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +144,8 @@
     <MESSAGE value="Modify validate parameter function" />
     <MESSAGE value="Modify getting api for redirect url" />
     <MESSAGE value="update gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gitignore" />
+    <MESSAGE value="update workflow process" />
+    <option name="LAST_COMMIT_MESSAGE" value="update workflow process" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -145,16 +159,17 @@
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/cmd/url-shortener/getting/geting.go</url>
-          <line>61</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/cmd/url-shortener/getting/geting.go</url>
-          <line>62</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/cmd/url-shortener/getting/geting_test.go</url>
+          <line>47</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/url_shortener$TestGet_URLGetFullNilRedis_in_url_shortener_cmd_url_shortener_getting.out" NAME="TestGet_URLGetFullNilRedis in url-shortener/cmd/url-shortener/getting Coverage Results" MODIFIED="1619615995576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/url_shortener$TSuite_in_url_shortener_cmd_url_shortener_generate__2_.out" NAME="TSuite in url-shortener/cmd/url-shortener/generate (2) Coverage Results" MODIFIED="1619614835497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/url_shortener$TSuite_in_url_shortener_cmd_url_shortener_getting.out" NAME="TSuite in url-shortener/cmd/url-shortener/getting Coverage Results" MODIFIED="1619616340930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/url_shortener$TSuite_in_url_shortener_cmd_url_shortener_generate.out" NAME="TSuite in url-shortener/cmd/url-shortener/generate Coverage Results" MODIFIED="1619614569623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

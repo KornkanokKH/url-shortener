@@ -23,6 +23,14 @@ var (
 		"Code":    1004,
 		"Message": "Error redis",
 	}
+	ErrCodeUrlExp = map[string]interface{}{
+		"Code":    1005,
+		"Message": "url has expired",
+	}
+	ErrCodeNotfound = map[string]interface{}{
+		"Code":    1006,
+		"Message": "Data not found",
+	}
 )
 
 type ErrorResponse struct {

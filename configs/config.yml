@@ -7,7 +7,7 @@ config: &default
     name: url-shortener
     env: local
   redis: &redis
-    key: "KEY:"
+    key: "shortner:"
     expire: 30 #Days
     redisServer:
       address: 127.0.0.1

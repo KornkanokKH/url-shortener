@@ -4,9 +4,11 @@ go 1.15
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef
+	github.com/gin-gonic/gin v1.7.1
 	github.com/go-redis/redis v6.15.9+incompatible
 	github.com/golang/mock v1.3.1
 	github.com/gorilla/mux v1.8.0
+	github.com/itchyny/base58-go v0.1.0
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/mitchellh/mapstructure v1.4.1 // indirect
 	github.com/newrelic/go-agent v3.10.0+incompatible

@@ -4,16 +4,17 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/asaskevich/govalidator"
+	_ "github.com/gin-gonic/gin"
 	_ "github.com/gorilla/mux"
 	"github.com/newrelic/go-agent/v3/newrelic"
 	"github.com/rs/zerolog/log"
 	"io/ioutil"
+	"math/big"
 	"net/http"
 	"net/url"
 	"strings"
-	_ "strings"
 	"time"
-	_ "time"
+	"url-shortener/internal/generate/encode"
 	"url-shortener/internal/http/rest"
 	"url-shortener/internal/repository/redis"
 )
@@ -69,7 +70,7 @@ func (s *StorageService) GenerateUrlShortener(w http.ResponseWriter, r *http.Req
 		return
 	}
 
-	// Step : validate url input
+	// Step : validate request
 	_, err = govalidator.ValidateStruct(request)
 	if err != nil {
 		var errList []string
@@ -104,22 +105,38 @@ func (s *StorageService) GenerateUrlShortener(w http.ResponseWriter, r *http.Req
 		return
 	}
 
-	// step : counter url on redis
-	err = s.RedisHandler.Set(s.RedisConfig.Key, request.ShortCode, 0, txn)
-	if err != nil {
-		msg := fmt.Sprintf("error redis (%v)", err)
-		log.Error().Msgf(fmtError, msg)
-		respErr.Error.Code = rest.ErrCodeRedis["Code"].(int)
-		respErr.Error.Message = fmt.Sprintf(rest.ErrCodeRedis["Message"].(string), err)
-		rest.WriteResponse(w, http.StatusBadRequest, respErr)
-		return
+	// step : generate shorten url
+	urlHashBytes := encode.Sha256Of(request.FullURL)
+	generatedNumber := new(big.Int).SetBytes(urlHashBytes).Uint64()
+	finalString := encode.Base58Encoded([]byte(fmt.Sprintf("%d", generatedNumber)))
 
+	// step : set url on redis
+	additional := make(map[string]interface{})
+	additional[fmt.Sprintf("%v%v:%v", s.RedisConfig.Key, finalString, "expire")] = request.ExpireDate
+	additional[fmt.Sprintf("%v%v:%v", s.RedisConfig.Key, finalString, "full")] = request.FullURL
+	additional[fmt.Sprintf("%v%v:%v", s.RedisConfig.Key, finalString, "hits")] = request.NumberOfHits
+
+	for k, v := range additional {
+		err = s.RedisHandler.Set(k, v, 0, txn)
+		if err != nil {
+			msg := fmt.Sprintf("error redis (%v)", err)
+			log.Error().Msgf(fmtError, msg)
+			respErr.Error.Code = rest.ErrCodeRedis["Code"].(int)
+			respErr.Error.Message = fmt.Sprintf(rest.ErrCodeRedis["Message"].(string), err)
+			rest.WriteResponse(w, http.StatusBadRequest, respErr)
+		}
 	}
-	// todo : generate shorten url
 
+	host := fmt.Sprintf("http://%v/", r.Host)
+	data := &ShortenerResponse{
+		ShortCode: request.ShortCode,
+		FullURL:   request.FullURL,
+		ShortURL:  host + finalString,
+	}
 	_ = rest.WriteResponse(w, http.StatusCreated, &rest.Response{
-		Code:    200,
+		Code:    302,
 		Message: "Success",
+		Data:    data,
 	})
 
 	return

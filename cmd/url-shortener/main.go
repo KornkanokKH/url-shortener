@@ -12,6 +12,7 @@ import (
 	"syscall"
 	"time"
 	"url-shortener/cmd/url-shortener/generate"
+	"url-shortener/cmd/url-shortener/getting"
 	"url-shortener/internal/config"
 	"url-shortener/internal/repository/redis"
 )
@@ -38,9 +39,10 @@ func run() error {
 	}
 
 	service := generate.NewService(redisHandler, conf.Redis)
+	getter := getting.NewService(redisHandler, conf.Redis)
 
 	server := &http.Server{
-		Handler:      routes(service),
+		Handler:      routes(service, getter),
 		Addr:         fmt.Sprintf(":%v", conf.Port),
 		WriteTimeout: conf.Timeout * time.Second,
 		ReadTimeout:  conf.Timeout * time.Second,
@@ -73,10 +75,11 @@ func run() error {
 	return nil
 }
 
-func routes(generate generate.Service) *mux.Router {
+func routes(generate generate.Service, getter getting.Service) *mux.Router {
 
 	route := mux.NewRouter()
 
+	route.HandleFunc("/{code}", getter.GetUrlShortener).Methods(http.MethodGet)
 	route.HandleFunc("/generate", generate.GenerateUrlShortener).Methods(http.MethodPost)
 	route.StrictSlash(false)
 

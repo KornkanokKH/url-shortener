@@ -40,7 +40,7 @@ func ReadConfigFile(configModel interface{}) error {
 		return fmt.Errorf("%v: cannot unmarshal configuration, %v", function, err)
 	}
 
-	// get configuration by environment(local, dev, or etc.) and marshal to binary
+	// getting configuration by environment(local, dev, or etc.) and marshal to binary
 	envConfig, err := yaml.Marshal(allEnvConfig[env])
 	if err != nil {
 		return fmt.Errorf("%s: unable to marshal configuration data at env=%s, %s", function, env, err.Error())

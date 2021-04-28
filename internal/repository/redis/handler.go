@@ -17,6 +17,7 @@ type HandlerInterface interface {
 	Connect(config Config) error
 	Disconnect()
 	Set(key string, value interface{}, exp time.Duration, txn *newrelic.Transaction) error
+	Get(key string, txn *newrelic.Transaction) (string, error)
 }
 type Handler struct {
 	client *redis.Client
@@ -57,4 +58,25 @@ func (handler *Handler) Set(key string, value interface{}, exp time.Duration, tx
 	defer segment.End()
 
 	return handler.client.Set(key, value, exp).Err()
+}
+
+func (handler *Handler) Get(key string, txn *newrelic.Transaction) (string, error) {
+
+	segment := newrelic.DatastoreSegment{
+		StartTime:          txn.StartSegmentNow(),
+		Product:            newrelic.DatastoreRedis,
+		Operation:          "GET",
+		ParameterizedQuery: key,
+	}
+
+	defer segment.End()
+
+	result, err := handler.client.Get(key).Result()
+	if err == redis.Nil {
+		return "", nil
+	} else if err != nil {
+		return "", err
+	}
+
+	return result, err
 }

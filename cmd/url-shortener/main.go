@@ -11,6 +11,7 @@ import (
 	"os/signal"
 	"syscall"
 	"time"
+	"url-shortener/cmd/url-shortener/deleting"
 	"url-shortener/cmd/url-shortener/generate"
 	"url-shortener/cmd/url-shortener/getting"
 	"url-shortener/internal/config"
@@ -40,9 +41,10 @@ func run() error {
 
 	service := generate.NewService(redisHandler, conf.Redis)
 	getter := getting.NewService(redisHandler, conf.Redis)
+	deleter := deleting.NewService(redisHandler, conf.Redis)
 
 	server := &http.Server{
-		Handler:      routes(service, getter),
+		Handler:      routes(service, getter, deleter),
 		Addr:         fmt.Sprintf(":%v", conf.Port),
 		WriteTimeout: conf.Timeout * time.Second,
 		ReadTimeout:  conf.Timeout * time.Second,
@@ -75,12 +77,14 @@ func run() error {
 	return nil
 }
 
-func routes(generate generate.Service, getter getting.Service) *mux.Router {
+func routes(generate generate.Service, getter getting.Service, deleter deleting.Service) *mux.Router {
 
 	route := mux.NewRouter()
 
 	route.HandleFunc("/{code}", getter.GetUrlShortener).Methods(http.MethodGet)
 	route.HandleFunc("/generate", generate.GenerateUrlShortener).Methods(http.MethodPost)
+	route.HandleFunc("/{code}", deleter.DeleteUrlShortener).Methods(http.MethodDelete)
+
 	route.StrictSlash(false)
 
 	return nrgorilla.InstrumentRoutes(route, nil)

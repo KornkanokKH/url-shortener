@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab54db0e-56c7-48a1-b190-bf9370fb2622" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cmd/url-shortener/deleting/deleting.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/url-shortener/deleting/deleting_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/url-shortener/getting/geting_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/generating_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/generating_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/getting/getting.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/getting/geting.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/repository/redis/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/redis/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +40,9 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1nal5zKqXwQMj9eEoSwOoYR5Pwt" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,16 +67,7 @@
       <recent name="D:\ProjectKornkaOh\url-shortener\internal\generate\encode" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build url-shortener/cmd/url-shortener">
-    <configuration name="go build dmpss-subscription-v2/cmd/subscription (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="url-shortener" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/cmd/subscription/main.go" />
-      <package value="dmpss-subscription-v2/cmd/subscription" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.TSuite in url-shortener/cmd/url-shortener/getting">
     <configuration name="go build url-shortener/cmd/subscription" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="url-shortener" />
       <working_directory value="$PROJECT_DIR$" />
@@ -110,13 +110,24 @@
       <pattern value="^\QTestSuite\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TSuite in url-shortener/cmd/url-shortener/getting" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="url-shortener" />
+      <working_directory value="$PROJECT_DIR$/cmd/url-shortener/getting" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="url-shortener/cmd/url-shortener/getting" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTestSuite\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TSuite in url-shortener/cmd/url-shortener/getting" />
         <item itemvalue="Go Build.go build url-shortener/cmd/url-shortener" />
         <item itemvalue="Go Test.TSuite in url-shortener/cmd/url-shortener/generate (1)" />
         <item itemvalue="Go Test.TSuite in url-shortener/cmd/url-shortener/generate" />
         <item itemvalue="Go Build.go build url-shortener/cmd/subscription" />
-        <item itemvalue="Go Build.go build dmpss-subscription-v2/cmd/subscription (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -127,7 +138,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modify validate parameter function" />
     <MESSAGE value="Modify getting api for redirect url" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify getting api for redirect url" />
+    <MESSAGE value="update gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="update gitignore" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -139,6 +151,16 @@
           <url>file://$PROJECT_DIR$/cmd/url-shortener/generate/generating.go</url>
           <line>2</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/url-shortener/getting/geting.go</url>
+          <line>61</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/cmd/url-shortener/getting/geting.go</url>
+          <line>62</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

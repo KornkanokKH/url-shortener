@@ -133,6 +133,7 @@ func (s *StorageService) GenerateUrlShortener(w http.ResponseWriter, r *http.Req
 		FullURL:   request.FullURL,
 		ShortURL:  host + finalString,
 	}
+	fmt.Println("GenerateUrlShortener : Success")
 	_ = rest.WriteResponse(w, http.StatusCreated, &rest.Response{
 		Code:    302,
 		Message: "Success",

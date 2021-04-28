@@ -36,6 +36,7 @@ func NewService(redisHandler *redis.Handler, redisConfig redis.Config) Service {
 }
 
 func (s *StorageService) GetUrlShortener(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("GetUrlShortener")
 
 	ctx := r.Context()
 	txn := newrelic.FromContext(ctx)
@@ -53,6 +54,7 @@ func (s *StorageService) GetUrlShortener(w http.ResponseWriter, r *http.Request)
 		log.Error().Msgf(fmtError, msg)
 		respErr.Error.Code = rest.ErrCodeBadRequest["Code"].(int)
 		respErr.Error.Message = msg
+		rest.WriteResponse(w, http.StatusBadRequest, respErr)
 		return
 	}
 
@@ -62,6 +64,7 @@ func (s *StorageService) GetUrlShortener(w http.ResponseWriter, r *http.Request)
 		log.Error().Msgf(fmtError, msg)
 		respErr.Error.Code = rest.ErrCodeUrlExp["Code"].(int)
 		respErr.Error.Message = rest.ErrCodeUrlExp["Message"].(string)
+		rest.WriteResponse(w, http.StatusBadRequest, respErr)
 		return
 	}
 
@@ -73,17 +76,20 @@ func (s *StorageService) GetUrlShortener(w http.ResponseWriter, r *http.Request)
 		log.Error().Msgf(fmtError, msg)
 		respErr.Error.Code = rest.ErrCodeBadRequest["Code"].(int)
 		respErr.Error.Message = msg
+		rest.WriteResponse(w, http.StatusBadRequest, respErr)
 		return
 	}
 
 	if urlRes == "" {
-		msg := fmt.Sprintf("redis error (%v)", err)
+		msg := fmt.Sprintf("url not found (%v)", err)
 		log.Error().Msgf(fmtError, msg)
 		respErr.Error.Code = rest.ErrCodeNotfound["Code"].(int)
 		respErr.Error.Message = rest.ErrCodeNotfound["Message"].(string)
+		rest.WriteResponse(w, http.StatusNotFound, respErr)
 		return
 	}
 
+	fmt.Println("GetUrlShortener : Success")
 	// Redirect
 	http.Redirect(w, r, urlRes, 302)
 

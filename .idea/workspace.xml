@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab54db0e-56c7-48a1-b190-bf9370fb2622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/url-shortener/deleting/deleting.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/url-shortener/deleting/deleting_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/url-shortener/getting/geting_test.go" afterDir="false" />
+    <list default="true" id="46be0e2f-0b13-46bd-bfc5-2db7c9103423" name="Default Changelist" comment="modify delete api, update workflow process">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/config.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/getting/getting.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/getting/geting.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repository/redis/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/redis/handler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

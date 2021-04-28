@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab54db0e-56c7-48a1-b190-bf9370fb2622" name="Default Changelist" comment="Modify getting api for redirect url">
-      <change afterPath="$PROJECT_DIR$/cmd/url-shortener/getting/getting.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/generate/encode/encode.go" afterDir="false" />
+    <list default="true" id="ab54db0e-56c7-48a1-b190-bf9370fb2622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/generating.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/shortener.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/shortener.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/http/rest/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/http/rest/response.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/repository/redis/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/repository/redis/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/url-shortener/generate/generating_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/url-shortener/generate/generating_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

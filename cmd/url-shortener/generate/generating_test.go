@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
-	mock_redis "url-shortener/internal/repository/redis/mocks"
+	mockredis "url-shortener/internal/repository/redis/mocks"
 )
 
 type TSuite struct {
@@ -20,11 +20,11 @@ func TestSuite(t *testing.T) {
 }
 
 var (
-	mockRedis *mock_redis.MockHandlerInterface
+	mockRedis *mockredis.MockHandlerInterface
 )
 
 func setUpServiceMocking(ctrl *gomock.Controller) StorageService {
-	mockRedis = mock_redis.NewMockHandlerInterface(ctrl)
+	mockRedis = mockredis.NewMockHandlerInterface(ctrl)
 
 	return StorageService{
 		RedisHandler: mockRedis,
